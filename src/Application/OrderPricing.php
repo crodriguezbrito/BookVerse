@@ -4,7 +4,7 @@ declare(strict_types=1);
 namespace BookVerse\Application;
 
 use BookVerse\Domain\{Cart, Order, OrderFactory};
-use BookVerse\Functional as F;
+use function BookVerse\Functional\pipeline_total;
 
 final class OrderPricing
 {
@@ -12,7 +12,7 @@ final class OrderPricing
 
     public function fromCartWithDiscount(Cart $cart, float $discount): Order
     {
-        $total = F\pipeline_total($cart->items(), 'EUR', $discount);
+        $total = pipeline_total($cart->items(), 'EUR', $discount);
         return $this->factory->createFromCart(uniqid('ord_'), $cart, $total);
     }
 }

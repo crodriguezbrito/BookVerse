@@ -7,7 +7,15 @@
   "autoload": {
     "psr-4": {
       "BookVerse\\": "src/"
-    }
+    },
+    "files": [
+      "src/Functional/CartFunctions.php",
+      "src/Functional/Currying.php",
+      "src/Functional/Pipeline.php",
+      "src/Functional/Immutability.php",
+      "src/Functional/RepoAdapters.php",
+      "src/Functional/Collections.php"
+    ]
   },
   "require-dev": {
     "phpunit/phpunit": "^11.0"

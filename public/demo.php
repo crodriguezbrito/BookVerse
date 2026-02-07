@@ -6,7 +6,7 @@ require __DIR__ . '/../vendor/autoload.php';
 use BookVerse\Domain\{Author, Book, Money, Cart, OrderFactory};
 use BookVerse\Domain\Pricing\{NoDiscount, PercentageDiscount};
 use BookVerse\Application\{CheckoutService, OrderPricing};
-use BookVerse\Functional as F;
+use function BookVerse\Functional\pipeline_total;
 
 // Seed
 $author = new Author('Isabel', 'Allende');
@@ -27,7 +27,7 @@ echo "[POO] Total sin descuento: " . $checkoutNoDiscount->total($cart)->format()
 echo "[POO] Total con 10%: " . $checkout10->total($cart)->format() . PHP_EOL;
 
 // PF pipeline
-$totalPF = F\pipeline_total($cart->items(), 'EUR', 0.10);
+$totalPF = pipeline_total($cart->items(), 'EUR', 0.10);
 echo "[FP ] Total con 10% (pipeline): " . $totalPF->format() . PHP_EOL;
 
 // Crear Order con mezcla POO + FP
