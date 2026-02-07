@@ -1,0 +1,22 @@
+{
+  "name": "bookverse/example",
+  "type": "project",
+  "require": {
+    "php": "^8.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "BookVerse\\": "src/"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^11.0"
+  },
+  "scripts": {
+    "demo": "php public/demo.php",
+    "test": "vendor/bin/phpunit"
+  },
+  "config": {
+    "sort-packages": true
+  }
+}
