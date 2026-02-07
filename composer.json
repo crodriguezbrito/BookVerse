@@ -1,0 +1,30 @@
+{
+  "name": "bookverse/example",
+  "type": "project",
+  "require": {
+    "php": "^8.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "BookVerse\\": "src/"
+    },
+    "files": [
+      "src/Functional/CartFunctions.php",
+      "src/Functional/Currying.php",
+      "src/Functional/Pipeline.php",
+      "src/Functional/Immutability.php",
+      "src/Functional/RepoAdapters.php",
+      "src/Functional/Collections.php"
+    ]
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^11.0"
+  },
+  "scripts": {
+    "demo": "php public/demo.php",
+    "test": "vendor/bin/phpunit"
+  },
+  "config": {
+    "sort-packages": true
+  }
+}
